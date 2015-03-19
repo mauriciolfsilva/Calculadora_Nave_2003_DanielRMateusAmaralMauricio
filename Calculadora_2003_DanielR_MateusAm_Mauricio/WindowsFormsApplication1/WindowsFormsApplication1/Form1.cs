@@ -181,7 +181,7 @@ namespace WindowsFormsApplication1
 
         private void Seno(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Result.Text))
+            if (type.Equals("nada") && !string.IsNullOrEmpty(Result.Text))
             {
                 a = double.Parse(Result.Text);
                 Result.Text = (Calculadora.seno(a).ToString());
@@ -190,7 +190,7 @@ namespace WindowsFormsApplication1
 
         private void Coseno(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Result.Text))
+            if (type.Equals("nada") && !string.IsNullOrEmpty(Result.Text))
             {
                 a = double.Parse(Result.Text);
                 Result.Text = (Calculadora.cos(a).ToString());
@@ -199,13 +199,42 @@ namespace WindowsFormsApplication1
 
         private void Tangente(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Result.Text))
+            if (type.Equals("nada") && !string.IsNullOrEmpty(Result.Text))
             {
                 a = double.Parse(Result.Text);
                 Result.Text = (Calculadora.tan(a).ToString());
             }
         }
 
+        private void Iterativa_Click(object sender, EventArgs e)
+        {
+            if (type.Equals("nada") && !string.IsNullOrEmpty(Result.Text))
+            {
+                a = double.Parse(Result.Text);
+                double r = 1;
+
+                for (var i = 1; i <= a; i++)
+                {
+                    r *= i;
+                }
+
+                Result.Text = r.ToString();
+
+            }
+        }
+
+        private void Recursiva_Click(object sender, EventArgs e)
+        {
+            if (type.Equals("nada") && !string.IsNullOrEmpty(Result.Text))
+            Result.Text = recursiva(double.Parse(Result.Text)).ToString();
+        }
+
+        public double recursiva(double n1)
+        {
+            if (n1 == 0)
+                return 1;
+            return recursiva(n1 - 1) * n1;
+        }
         private void Clean(object sender, EventArgs e)
         {
             p = false;
@@ -273,7 +302,24 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void FibIt_Click(object sender, EventArgs e)
+        {
+            if (type.Equals("nada") && !string.IsNullOrEmpty(Result.Text) && int.Parse(Result.Text) != 0)
+                Result.Text = Calculadora.fib_it(int.Parse(Result.Text)).ToString();
+            else
+            {
+                Result.Text = "";
+            }
+        }
 
-
+        private void FibRec_Click(object sender, EventArgs e)
+        {
+            if (type.Equals("nada") && !string.IsNullOrEmpty(Result.Text) && int.Parse(Result.Text) != 0)
+                Result.Text = Calculadora.fib_rec(int.Parse(Result.Text), 0, 1, 0).ToString();
+            else
+            {
+                Result.Text = "";
+            }
+        }
     }
 }

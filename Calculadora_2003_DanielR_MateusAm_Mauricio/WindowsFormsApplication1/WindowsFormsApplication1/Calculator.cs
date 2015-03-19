@@ -85,5 +85,45 @@ namespace WindowsFormsApplication1
         {
             return (Math.Tan(Math.PI*a/180));
         }
+
+        public int fib_it(int a)
+        {
+            int num1 = 0;
+            int num2 = 1;
+            for(int i = 1; i <= a - 2; i++)
+            {
+                if (i % 2 == 1)
+                    num1 += num2;
+                else
+                    num2 += num1;
+            }
+            if (a == 1)
+                return num1;
+            else
+            {
+                if (num1 > num2)
+                    return num1;
+                else
+                    return num2;
+            }
+        }
+
+        public int fib_rec(int a,int num1,int num2, int count)
+        {
+            if (a == 1)
+                    return 0;
+            else if (a == 2)
+                    return 1;
+            else if (count == a - 2)
+            {  
+                return num2;
+            }
+            else
+            {
+                count++;
+                return fib_rec(a, num2, num1 + num2, count);
+            }
+                
+        }
     }
 }

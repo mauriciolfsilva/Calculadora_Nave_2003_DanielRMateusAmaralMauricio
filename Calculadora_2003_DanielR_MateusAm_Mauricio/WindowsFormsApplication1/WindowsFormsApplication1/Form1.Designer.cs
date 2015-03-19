@@ -55,6 +55,10 @@
             this.tg = new System.Windows.Forms.Button();
             this.porcentagem = new System.Windows.Forms.Button();
             this.Resto = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -161,6 +165,7 @@
             // 
             this.Result.Location = new System.Drawing.Point(62, 73);
             this.Result.Name = "Result";
+            this.Result.ReadOnly = true;
             this.Result.Size = new System.Drawing.Size(318, 20);
             this.Result.TabIndex = 10;
             this.Result.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -315,11 +320,55 @@
             this.Resto.UseVisualStyleBackColor = true;
             this.Resto.Click += new System.EventHandler(this.Rest);
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(86, 280);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 28;
+            this.button10.Text = "Fat Iterativo";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Iterativa_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(167, 280);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 29;
+            this.button11.Text = "Fat Rec";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.Recursiva_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(248, 280);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 30;
+            this.button12.Text = "Fib Ite";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.FibIt_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(329, 280);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 31;
+            this.button13.Text = "Fib Rec";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.FibRec_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 330);
+            this.Controls.Add(this.button13);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.Resto);
             this.Controls.Add(this.porcentagem);
             this.Controls.Add(this.tg);
@@ -384,6 +433,10 @@
         private System.Windows.Forms.Button tg;
         private System.Windows.Forms.Button porcentagem;
         private System.Windows.Forms.Button Resto;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
 
     }
 }
